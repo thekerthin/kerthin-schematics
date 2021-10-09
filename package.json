@@ -19,6 +19,7 @@
     "url": "https://github.com/thekerthin/kerthin-schematics/issues"
   },
   "homepage": "https://github.com/thekerthin/kerthin-schematics#readme",
+  "schematics": "./dist/collection.json",
   "scripts": {
     "postbuild": "npm run copy:collection && npm run copy:lib",
     "build": "rimraf dist && tsc",
