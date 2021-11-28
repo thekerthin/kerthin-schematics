@@ -5,6 +5,31 @@
       "factory": "./lib/new-app/new-app.factory#main",
       "description": "Create a Kerthin BE application.",
       "schema": "./lib/new-app/schema.json"
+    },
+    "module": {
+      "factory": "./lib/module/module.factory#main",
+      "description": "Create a Module.",
+      "schema": "./lib/module/schema.json"
+    },
+    "value-object": {
+      "factory": "./lib/value-object/value-object.factory#main",
+      "description": "Create a Value Object.",
+      "schema": "./lib/value-object/schema.json"
+    },
+    "entity": {
+      "factory": "./lib/entity/entity.factory#main",
+      "description": "Create an Entity.",
+      "schema": "./lib/entity/schema.json"
+    },
+    "aggregate": {
+      "factory": "./lib/aggregate/aggregate.factory#main",
+      "description": "Create an Aggregate.",
+      "schema": "./lib/aggregate/schema.json"
+    },
+    "event": {
+      "factory": "./lib/event/event.factory#main",
+      "description": "Create an event.",
+      "schema": "./lib/event/schema.json"
     }
   }
 }

@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:<% if(db === "postgresql")  { %>
+  postgresql:
+    image: postgres:alpine
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: <%= name %>
+    volumes:
+      - ./.database:/docker-entrypoint-initdb.d<% } %><% if(db === "mongodb") { %>
+  mongodb:
+    image: mongo
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password<% } %>

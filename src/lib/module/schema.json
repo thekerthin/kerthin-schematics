@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "ModuleOptions",
+  "title": "Kerthin Module Options Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the module.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the module?"
+    },
+    "directory": {
+      "type": "string",
+      "description": "Module directory."
+    }
+  },
+  "required": [
+    "name",
+    "directory"
+  ]
+}

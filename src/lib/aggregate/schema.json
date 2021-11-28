@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "AggregateOptions",
+  "title": "Kerthin Aggregate Options Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the aggregate.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the aggregate?"
+    },
+    "moduleName": {
+      "type": "string",
+      "description": "Module name for the aggregate.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What's the module?"
+    },
+    "properties": {
+      "type": "string",
+      "description": "Properties for the aggregate."
+    },
+    "directory": {
+      "type": "string",
+      "description": "Aggregate directory."
+    }
+  },
+  "required": [
+    "name",
+    "moduleName",
+    "properties",
+    "directory"
+  ]
+}

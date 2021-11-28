@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "EntityOptions",
+  "title": "Kerthin Entity Options Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the entity.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the entity?"
+    },
+    "moduleName": {
+      "type": "string",
+      "description": "Module name for the entity.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What's the module?"
+    },
+    "properties": {
+      "type": "string",
+      "description": "Properties for the entity."
+    },
+    "directory": {
+      "type": "string",
+      "description": "Entity directory."
+    }
+  },
+  "required": [
+    "name",
+    "moduleName",
+    "properties",
+    "directory"
+  ]
+}

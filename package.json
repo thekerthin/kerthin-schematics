@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "@types/node": "^16.10.3",
+    "@types/ramda": "^0.27.45",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "cpx": "^1.5.0",
@@ -44,6 +45,8 @@
   },
   "dependencies": {
     "@angular-devkit/core": "^12.2.9",
-    "@angular-devkit/schematics": "^12.2.9"
+    "@angular-devkit/schematics": "^12.2.9",
+    "@kerthin/utils": "^0.0.1-alpha.0",
+    "ramda": "^0.27.1"
   }
 }

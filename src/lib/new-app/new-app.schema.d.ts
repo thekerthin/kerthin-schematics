@@ -7,6 +7,10 @@ export interface NewAppOptions {
      */
     name: string;
     /**
+     * Database for the application.
+     */
+    db: 'postgresql' | 'mysql' | 'mongodb';
+    /**
      * Kerthin application author.
      */
     author?: string;
@@ -14,4 +18,8 @@ export interface NewAppOptions {
      * Kerthin application version.
      */
     version?: string;
+    /**
+     * Kerthin application directory.
+     */
+    directory?: string;
 }

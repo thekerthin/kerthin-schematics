@@ -1,28 +1,44 @@
 {
-    "$schema": "http://json-schema.org/schema",
-    "$id": "NewAppOptions",
-    "title": "Kerthin New BE App Options Schema",
-    "type": "object",
-    "properties": {
-      "name": {
-        "type": "string",
-        "description": "The name of the application.",
-        "$default": {
-          "$source": "argv",
-          "index": 0
-        },
-        "x-prompt": "What name would you like to use for the BE app?"
+  "$schema": "http://json-schema.org/schema",
+  "$id": "NewAppOptions",
+  "title": "Kerthin New BE App Options Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the application.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
       },
-      "author": {
-        "type": "string",
-        "description": "Kerthin application author.",
-        "default": "kerthin@development.com"
-      },
-      "version": {
-        "type": "string",
-        "description": "Kerthin application version.",
-        "default": "0.0.1"
-      }
+      "x-prompt": "What name would you like to use for the BE app?"
     },
-    "required": ["name"]
-  }
+    "db": {
+      "enum": [
+        "postgresql",
+        "mongodb"
+      ],
+      "description": "Database for the application.",
+      "default": "postgresql",
+      "x-prompt": "What database would you like to use for the BE app?"
+    },
+    "author": {
+      "type": "string",
+      "description": "Kerthin application author.",
+      "default": "kerthin@development.com"
+    },
+    "version": {
+      "type": "string",
+      "description": "Kerthin application version.",
+      "default": "0.0.1"
+    },
+    "directory": {
+      "type": "string",
+      "description": "Kerthin application directory."
+    }
+  },
+  "required": [
+    "name",
+    "db"
+  ]
+}

@@ -1,18 +1,9 @@
 {
   "name": "<%= name %>",
   "version": "<%= version %>",
-  "main": "index.js",
+  "main": "./dist/main.js",
   "author": "<%= author %>",
   "license": "MIT",
-  "peerDependencies": {
-    "@mikro-orm/core": "^4.5.5"
-  },
-  "mikro-orm": {
-    "configPaths": [
-      ".mikro-orm.config.ts",
-      "./dist/mikro-orm.config.js"
-    ]
-  },
   "scripts": {
     "build": "rimraf dist && tsc",
     "generate-schemas": "ts-node generate-schemas.ts",
@@ -22,12 +13,8 @@
     "migration:run": "mikro-orm migration:up"
   },
   "dependencies": {
+    "@kerthin/domain": "^0.0.1-alpha.6",
     "@kerthin/utils": "0.0.1-alpha.0",
-    "@mikro-orm/core": "^4.5.5",
-    "@mikro-orm/migrations": "^4.5.5",
-    "@mikro-orm/mongodb": "^4.5.6",
-    "@mikro-orm/nestjs": "^4.2.0",
-    "@mikro-orm/reflection": "^4.5.5",
     "@nestjs/common": "^7.6.17",
     "@nestjs/core": "^7.6.17",
     "@nestjs/graphql": "^8.0.2",
@@ -44,7 +31,6 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@mikro-orm/cli": "^4.5.5",
     "@types/node": "^15.6.1",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
     "@typescript-eslint/parser": "^4.25.0",
