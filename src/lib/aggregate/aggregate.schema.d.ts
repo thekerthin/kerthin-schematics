@@ -17,5 +17,5 @@ export interface AggregateOptions {
     /**
      * Aggregate directory.
      */
-    directory: string;
+    directory?: string;
 }

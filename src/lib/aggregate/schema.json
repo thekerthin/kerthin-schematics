@@ -34,7 +34,6 @@
   "required": [
     "name",
     "moduleName",
-    "properties",
-    "directory"
+    "properties"
   ]
 }

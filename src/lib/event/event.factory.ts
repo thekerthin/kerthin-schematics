@@ -3,8 +3,6 @@ import { strings } from '@angular-devkit/core';
 import { EventOptions } from './event.schema';
 
 export function main(options: EventOptions): Rule {
-  console.log('options', options);
-
   const filesDirectory = options?.directory;
 
   return mergeWith(apply(url('./files'), [

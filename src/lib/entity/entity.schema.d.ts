@@ -17,5 +17,5 @@ export interface EntityOptions {
     /**
      * Entity directory.
      */
-    directory: string;
+    directory?: string;
 }

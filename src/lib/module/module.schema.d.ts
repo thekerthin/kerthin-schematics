@@ -9,5 +9,5 @@ export interface ModuleOptions {
     /**
      * Module directory.
      */
-    directory: string;
+    directory?: string;
 }

@@ -13,5 +13,5 @@ export interface ValueObjectOptions {
     /**
      * Value object directory.
      */
-    directory: string;
+    directory?: string;
 }

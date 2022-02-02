@@ -29,7 +29,6 @@
   },
   "required": [
     "name",
-    "moduleName",
-    "directory"
+    "moduleName"
   ]
 }

@@ -3,9 +3,7 @@ import { strings } from '@angular-devkit/core';
 import { EntityOptions } from './entity.schema';
 
 export function main(options: EntityOptions): Rule {
-  console.log('options', options);
-
-  const filesDirectory = options?.directory;
+  const filesDirectory = options?.directory || '';
 
   return mergeWith(apply(url('./files'), [
     template({
@@ -29,6 +27,13 @@ function getProperties(properties) {
 
 function importValueObjects(properties) {
   return getProperties(properties)
+    .reduce((properties, property) => {
+      const valueObjectAlreadyExist = properties
+        .some(({ valueObject }) => valueObject === property.valueObject);
+      if (valueObjectAlreadyExist) return properties;
+      properties.push(property);
+      return properties;
+    }, [])
     .map(({ valueObject }) =>
       `import { ${strings.classify(valueObject)} } from './value_objects/${strings.classify(valueObject)}';`
     ).join('\n');
@@ -38,6 +43,6 @@ function addPropValueObjects(properties) {
   return getProperties(properties)
     .map(({ propName, valueObject, isList }) =>
       `  @ValueObjectProp(${isList ? `() => ${valueObject}` : '' })
-  ${propName}: ${isList ? `Array<${valueObject}>` : `${valueObject}`};`
+  ${strings.camelize(propName)}: ${isList ? `Array<${valueObject}>` : `${valueObject}`};`
     ).join('\n\n');
 }
