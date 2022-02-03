@@ -11,7 +11,11 @@ export interface EventOptions {
      */
     moduleName: string;
     /**
+     * Event action.
+     */
+    action: string;
+    /**
      * Event directory.
      */
-    directory: string;
+    directory?: string;
 }

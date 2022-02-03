@@ -30,6 +30,11 @@
       "factory": "./lib/event/event.factory#main",
       "description": "Create an event.",
       "schema": "./lib/event/schema.json"
+    },
+    "repository": {
+      "factory": "./lib/repository/repository.factory#main",
+      "description": "Create an repository.",
+      "schema": "./lib/repository/schema.json"
     }
   }
 }

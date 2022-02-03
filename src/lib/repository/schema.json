@@ -1,39 +1,39 @@
 {
   "$schema": "http://json-schema.org/schema",
-  "$id": "EventOptions",
-  "title": "Kerthin Event Options Schema",
+  "$id": "RepositoryOptions",
+  "title": "Kerthin Repository Options Schema",
   "type": "object",
   "properties": {
     "name": {
       "type": "string",
-      "description": "The name of the event.",
+      "description": "The name of the repository.",
       "$default": {
         "$source": "argv",
         "index": 0
       },
-      "x-prompt": "What name would you like to use for the event?"
+      "x-prompt": "What name would you like to use for the repository?"
     },
     "moduleName": {
       "type": "string",
-      "description": "Module name for the event.",
+      "description": "Module name for the entity.",
       "$default": {
         "$source": "argv",
         "index": 0
       },
       "x-prompt": "What's the module?"
     },
-    "action": {
+    "entity": {
       "type": "string",
-      "description": "Event action."
+      "description": "Entity or Aggregate for ref repository."
     },
     "directory": {
       "type": "string",
-      "description": "Event directory."
+      "description": "Entity directory."
     }
   },
   "required": [
     "name",
     "moduleName",
-    "action"
+    "entity"
   ]
 }
